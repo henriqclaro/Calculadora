@@ -39,6 +39,11 @@
             this.btnMult = new System.Windows.Forms.Button();
             this.btnSub = new System.Windows.Forms.Button();
             this.btnIgual = new System.Windows.Forms.Button();
+            this.btnSegue = new System.Windows.Forms.Button();
+            this.btnLimpa = new System.Windows.Forms.Button();
+            this.btnInvert = new System.Windows.Forms.Button();
+            this.btnNegar = new System.Windows.Forms.Button();
+            this.lblNeg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numOper2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOper1)).BeginInit();
             this.SuspendLayout();
@@ -46,20 +51,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 33);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(12, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 26);
+            this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Operando 1:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 157);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(12, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 26);
+            this.label2.Size = new System.Drawing.Size(113, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Operando 2: ";
             // 
@@ -67,7 +74,8 @@
             // 
             this.lblOper.AutoSize = true;
             this.lblOper.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOper.Location = new System.Drawing.Point(235, 95);
+            this.lblOper.ForeColor = System.Drawing.Color.White;
+            this.lblOper.Location = new System.Drawing.Point(144, 88);
             this.lblOper.Name = "lblOper";
             this.lblOper.Size = new System.Drawing.Size(30, 26);
             this.lblOper.TabIndex = 5;
@@ -76,16 +84,22 @@
             // lblResultado
             // 
             this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultado.Location = new System.Drawing.Point(12, 296);
+            this.lblResultado.ForeColor = System.Drawing.Color.White;
+            this.lblResultado.Location = new System.Drawing.Point(11, 183);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(305, 26);
             this.lblResultado.TabIndex = 7;
-            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblResultado.Text = "Selecione uma operação";
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // numOper2
             // 
+            this.numOper2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.numOper2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numOper2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numOper2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numOper2.Location = new System.Drawing.Point(169, 151);
+            this.numOper2.ForeColor = System.Drawing.Color.White;
+            this.numOper2.Location = new System.Drawing.Point(16, 126);
             this.numOper2.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -103,8 +117,12 @@
             // 
             // numOper1
             // 
+            this.numOper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.numOper1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numOper1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numOper1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numOper1.Location = new System.Drawing.Point(169, 27);
+            this.numOper1.ForeColor = System.Drawing.Color.White;
+            this.numOper1.Location = new System.Drawing.Point(16, 49);
             this.numOper1.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -118,11 +136,14 @@
             this.numOper1.Name = "numOper1";
             this.numOper1.Size = new System.Drawing.Size(120, 32);
             this.numOper1.TabIndex = 10;
+            this.numOper1.ValueChanged += new System.EventHandler(this.numOper1_ValueChanged);
             // 
             // btnSoma
             // 
+            this.btnSoma.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSoma.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSoma.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSoma.Location = new System.Drawing.Point(71, 89);
+            this.btnSoma.Location = new System.Drawing.Point(16, 235);
             this.btnSoma.Name = "btnSoma";
             this.btnSoma.Size = new System.Drawing.Size(35, 37);
             this.btnSoma.TabIndex = 11;
@@ -132,8 +153,10 @@
             // 
             // btnDiv
             // 
+            this.btnDiv.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDiv.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnDiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiv.Location = new System.Drawing.Point(194, 89);
+            this.btnDiv.Location = new System.Drawing.Point(57, 278);
             this.btnDiv.Name = "btnDiv";
             this.btnDiv.Size = new System.Drawing.Size(35, 35);
             this.btnDiv.TabIndex = 13;
@@ -143,8 +166,10 @@
             // 
             // btnMult
             // 
+            this.btnMult.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMult.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnMult.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMult.Location = new System.Drawing.Point(153, 89);
+            this.btnMult.Location = new System.Drawing.Point(16, 278);
             this.btnMult.Name = "btnMult";
             this.btnMult.Size = new System.Drawing.Size(35, 35);
             this.btnMult.TabIndex = 15;
@@ -154,10 +179,12 @@
             // 
             // btnSub
             // 
+            this.btnSub.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSub.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSub.Location = new System.Drawing.Point(112, 89);
+            this.btnSub.Location = new System.Drawing.Point(57, 235);
             this.btnSub.Name = "btnSub";
-            this.btnSub.Size = new System.Drawing.Size(35, 35);
+            this.btnSub.Size = new System.Drawing.Size(35, 37);
             this.btnSub.TabIndex = 17;
             this.btnSub.Text = "-";
             this.btnSub.UseVisualStyleBackColor = true;
@@ -165,21 +192,93 @@
             // 
             // btnIgual
             // 
+            this.btnIgual.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIgual.Enabled = false;
+            this.btnIgual.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnIgual.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIgual.Location = new System.Drawing.Point(94, 221);
+            this.btnIgual.Location = new System.Drawing.Point(98, 235);
             this.btnIgual.Name = "btnIgual";
-            this.btnIgual.Size = new System.Drawing.Size(146, 35);
+            this.btnIgual.Size = new System.Drawing.Size(38, 78);
             this.btnIgual.TabIndex = 19;
             this.btnIgual.Text = "=";
             this.btnIgual.UseVisualStyleBackColor = true;
             this.btnIgual.Click += new System.EventHandler(this.btnIgual_Click);
             // 
+            // btnSegue
+            // 
+            this.btnSegue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSegue.Enabled = false;
+            this.btnSegue.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSegue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSegue.Location = new System.Drawing.Point(142, 235);
+            this.btnSegue.Name = "btnSegue";
+            this.btnSegue.Size = new System.Drawing.Size(35, 37);
+            this.btnSegue.TabIndex = 20;
+            this.btnSegue.Text = "→";
+            this.btnSegue.UseVisualStyleBackColor = true;
+            this.btnSegue.Click += new System.EventHandler(this.btnSegue_Click);
+            // 
+            // btnLimpa
+            // 
+            this.btnLimpa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpa.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLimpa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpa.Location = new System.Drawing.Point(183, 278);
+            this.btnLimpa.Name = "btnLimpa";
+            this.btnLimpa.Size = new System.Drawing.Size(35, 35);
+            this.btnLimpa.TabIndex = 21;
+            this.btnLimpa.Text = "C";
+            this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
+            // 
+            // btnInvert
+            // 
+            this.btnInvert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInvert.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnInvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvert.Location = new System.Drawing.Point(183, 235);
+            this.btnInvert.Name = "btnInvert";
+            this.btnInvert.Size = new System.Drawing.Size(35, 37);
+            this.btnInvert.TabIndex = 22;
+            this.btnInvert.Text = "⇵";
+            this.btnInvert.UseVisualStyleBackColor = true;
+            this.btnInvert.Click += new System.EventHandler(this.btnInvert_Click);
+            // 
+            // btnNegar
+            // 
+            this.btnNegar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNegar.Enabled = false;
+            this.btnNegar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnNegar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNegar.Location = new System.Drawing.Point(142, 278);
+            this.btnNegar.Name = "btnNegar";
+            this.btnNegar.Size = new System.Drawing.Size(35, 35);
+            this.btnNegar.TabIndex = 23;
+            this.btnNegar.Text = "±";
+            this.btnNegar.UseVisualStyleBackColor = true;
+            this.btnNegar.Click += new System.EventHandler(this.btnNegar_Click);
+            // 
+            // lblNeg
+            // 
+            this.lblNeg.AutoSize = true;
+            this.lblNeg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNeg.ForeColor = System.Drawing.Color.White;
+            this.lblNeg.Location = new System.Drawing.Point(180, 88);
+            this.lblNeg.Name = "lblNeg";
+            this.lblNeg.Size = new System.Drawing.Size(0, 20);
+            this.lblNeg.TabIndex = 24;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 351);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.ClientSize = new System.Drawing.Size(299, 339);
+            this.Controls.Add(this.lblNeg);
+            this.Controls.Add(this.btnNegar);
+            this.Controls.Add(this.btnInvert);
+            this.Controls.Add(this.btnLimpa);
+            this.Controls.Add(this.btnSegue);
             this.Controls.Add(this.btnIgual);
             this.Controls.Add(this.btnSub);
             this.Controls.Add(this.btnMult);
@@ -214,6 +313,11 @@
         private System.Windows.Forms.Button btnMult;
         private System.Windows.Forms.Button btnSub;
         private System.Windows.Forms.Button btnIgual;
+        private System.Windows.Forms.Button btnSegue;
+        private System.Windows.Forms.Button btnLimpa;
+        private System.Windows.Forms.Button btnInvert;
+        private System.Windows.Forms.Button btnNegar;
+        private System.Windows.Forms.Label lblNeg;
     }
 }
 

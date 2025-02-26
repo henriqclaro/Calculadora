@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ namespace Calculadora
         {
             lblOper.Text = operador;
             btnIgual.Enabled = true;
+            MostrarResultado();
         }
 
         private void btnSoma_Click(object sender, EventArgs e)
@@ -41,34 +43,84 @@ namespace Calculadora
         private void btnDiv_Click(object sender, EventArgs e)
         {
             AtribuirOperador(btnDiv.Text);
-            TravarResultado();
         }
 
         private void btnIgual_Click(object sender, EventArgs e)
         {
-            double num1, num2, resultado;
-            num1 = (double)numOper1.Value;
-            num2 = (double)numOper2.Value;
+            MostrarResultado();
+        }
 
-            if (lblOper.Text == btnSoma.Text)
-                resultado = num1 + num2;
-            else if (lblOper.Text == btnSub.Text)
-                resultado = num1 - num2;
-            else if (lblOper.Text == btnMult.Text)
-                resultado = num1 * num2;
-            else resultado = num1 / num2;
+        void MostrarResultado()
+        {
+            if (lblOper.Text != "...")
+            {
+                double num1, num2, resultado;
+                num1 = (double)numOper1.Value;
+                num2 = (double)numOper2.Value;
 
-            lblResultado.Text = resultado.ToString();
+                if (lblOper.Text == btnSoma.Text)
+                    resultado = num1 + num2;
+                else if (lblOper.Text == btnSub.Text)
+                    resultado = num1 - num2;
+                else if (lblOper.Text == btnMult.Text)
+                    resultado = num1 * num2;
+                else resultado = num1 / num2;
+
+                lblResultado.Text = resultado.ToString();
+                btnSegue.Enabled = true;
+                btnNegar.Enabled = true;
+                lblNeg.Text = "";
+                TravarResultado();
+            }
+            
         }
 
         void TravarResultado()
         {
-            btnIgual.Enabled = !((lblOper.Text == btnDiv.Text && numOper2.Value == 0) || lblOper.Text == "...");
+            if ((lblOper.Text == btnDiv.Text && numOper2.Value == 0) || lblOper.Text == "...")
+            {
+                lblResultado.Text = "Operação não realizável";
+                btnIgual.Enabled = false;
+                btnSegue.Enabled = false;
+                btnNegar.Enabled = false;
+            }
         }
 
         private void numOper2_ValueChanged(object sender, EventArgs e)
         {
+            MostrarResultado();
+        }
+
+        private void numOper1_ValueChanged(object sender, EventArgs e)
+        {
+            MostrarResultado();
+        }
+
+        private void btnSegue_Click(object sender, EventArgs e)
+        {
+            numOper1.Value = (decimal)Double.Parse(lblResultado.Text);
+        }
+
+        private void btnLimpa_Click(object sender, EventArgs e)
+        {
+            numOper1.Value = 0;
+            numOper2.Value = 0;
+            lblOper.Text = "...";
             TravarResultado();
+            lblResultado.Text = "Selecione uma operação";
+        }
+
+        private void btnInvert_Click(object sender, EventArgs e)
+        {
+            numOper1.Value += numOper2.Value;
+            numOper2.Value = numOper1.Value - numOper2.Value;
+            numOper1.Value -= numOper2.Value;
+        }
+
+        private void btnNegar_Click(object sender, EventArgs e)
+        {
+            lblResultado.Text = ((Double.Parse(lblResultado.Text))*(-1)).ToString();
+            lblNeg.Text = "(Negado)";
         }
     }
 }
