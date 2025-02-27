@@ -16,6 +16,26 @@ namespace Calculadora
         public Form1()
         {
             InitializeComponent();
+            CriarDicas();
+        }
+
+        void CriarDicas()
+        {
+            ToolTip dica = new ToolTip();
+            dica.AutoPopDelay = 4000;
+            dica.InitialDelay = 900;
+            dica.ReshowDelay = 500;
+            dica.ShowAlways = true;
+
+            dica.SetToolTip(this.btnSoma, "Adição");
+            dica.SetToolTip(this.btnSub, "Subtração");
+            dica.SetToolTip(this.btnMult, "Multiplicação");
+            dica.SetToolTip(this.btnDiv, "Divisão");
+            dica.SetToolTip(this.btnIgual, "Calcular");
+            dica.SetToolTip(this.btnSegue, "Seguir");
+            dica.SetToolTip(this.btnNegar, "Negar");
+            dica.SetToolTip(this.btnInvert, "Inverter");
+            dica.SetToolTip(this.btnLimpa, "Limpar");
         }
 
         void AtribuirOperador(string operador)
@@ -120,7 +140,10 @@ namespace Calculadora
         private void btnNegar_Click(object sender, EventArgs e)
         {
             lblResultado.Text = ((Double.Parse(lblResultado.Text))*(-1)).ToString();
-            lblNeg.Text = "(Negado)";
+            if (lblNeg.Text != "(Negado)")
+                lblNeg.Text = "(Negado)";
+            else
+                lblNeg.Text = "";
         }
     }
 }

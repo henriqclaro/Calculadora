@@ -85,12 +85,12 @@
             // 
             this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultado.ForeColor = System.Drawing.Color.White;
-            this.lblResultado.Location = new System.Drawing.Point(11, 183);
+            this.lblResultado.Location = new System.Drawing.Point(-18, 184);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(305, 26);
             this.lblResultado.TabIndex = 7;
             this.lblResultado.Text = "Selecione uma operação";
-            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // numOper2
             // 
