@@ -94,20 +94,20 @@
             // 
             // numOper2
             // 
-            this.numOper2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.numOper2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(35)))));
             this.numOper2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numOper2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numOper2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numOper2.ForeColor = System.Drawing.Color.White;
             this.numOper2.Location = new System.Drawing.Point(16, 126);
             this.numOper2.Maximum = new decimal(new int[] {
-            1000000,
-            0,
+            -1,
+            2147483647,
             0,
             0});
             this.numOper2.Minimum = new decimal(new int[] {
-            1000000,
-            0,
+            -1,
+            2147483647,
             0,
             -2147483648});
             this.numOper2.Name = "numOper2";
@@ -117,20 +117,20 @@
             // 
             // numOper1
             // 
-            this.numOper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.numOper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(35)))));
             this.numOper1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numOper1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numOper1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numOper1.ForeColor = System.Drawing.Color.White;
             this.numOper1.Location = new System.Drawing.Point(16, 49);
             this.numOper1.Maximum = new decimal(new int[] {
-            1000000,
-            0,
+            -1,
+            2147483647,
             0,
             0});
             this.numOper1.Minimum = new decimal(new int[] {
-            1000000,
-            0,
+            -1,
+            2147483647,
             0,
             -2147483648});
             this.numOper1.Name = "numOper1";
@@ -140,6 +140,7 @@
             // 
             // btnSoma
             // 
+            this.btnSoma.BackColor = System.Drawing.Color.Transparent;
             this.btnSoma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSoma.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSoma.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,11 +149,12 @@
             this.btnSoma.Size = new System.Drawing.Size(35, 37);
             this.btnSoma.TabIndex = 11;
             this.btnSoma.Text = "+";
-            this.btnSoma.UseVisualStyleBackColor = true;
+            this.btnSoma.UseVisualStyleBackColor = false;
             this.btnSoma.Click += new System.EventHandler(this.btnSoma_Click);
             // 
             // btnDiv
             // 
+            this.btnDiv.BackColor = System.Drawing.Color.Transparent;
             this.btnDiv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDiv.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnDiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,11 +163,12 @@
             this.btnDiv.Size = new System.Drawing.Size(35, 35);
             this.btnDiv.TabIndex = 13;
             this.btnDiv.Text = "÷";
-            this.btnDiv.UseVisualStyleBackColor = true;
+            this.btnDiv.UseVisualStyleBackColor = false;
             this.btnDiv.Click += new System.EventHandler(this.btnDiv_Click);
             // 
             // btnMult
             // 
+            this.btnMult.BackColor = System.Drawing.Color.Transparent;
             this.btnMult.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMult.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnMult.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,11 +177,12 @@
             this.btnMult.Size = new System.Drawing.Size(35, 35);
             this.btnMult.TabIndex = 15;
             this.btnMult.Text = "×";
-            this.btnMult.UseVisualStyleBackColor = true;
+            this.btnMult.UseVisualStyleBackColor = false;
             this.btnMult.Click += new System.EventHandler(this.btnMult_Click);
             // 
             // btnSub
             // 
+            this.btnSub.BackColor = System.Drawing.Color.Transparent;
             this.btnSub.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSub.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,11 +191,12 @@
             this.btnSub.Size = new System.Drawing.Size(35, 37);
             this.btnSub.TabIndex = 17;
             this.btnSub.Text = "-";
-            this.btnSub.UseVisualStyleBackColor = true;
+            this.btnSub.UseVisualStyleBackColor = false;
             this.btnSub.Click += new System.EventHandler(this.btnSub_Click);
             // 
             // btnIgual
             // 
+            this.btnIgual.BackColor = System.Drawing.Color.Transparent;
             this.btnIgual.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIgual.Enabled = false;
             this.btnIgual.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -201,11 +206,12 @@
             this.btnIgual.Size = new System.Drawing.Size(38, 78);
             this.btnIgual.TabIndex = 19;
             this.btnIgual.Text = "=";
-            this.btnIgual.UseVisualStyleBackColor = true;
+            this.btnIgual.UseVisualStyleBackColor = false;
             this.btnIgual.Click += new System.EventHandler(this.btnIgual_Click);
             // 
             // btnSegue
             // 
+            this.btnSegue.BackColor = System.Drawing.Color.Transparent;
             this.btnSegue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSegue.Enabled = false;
             this.btnSegue.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -215,11 +221,12 @@
             this.btnSegue.Size = new System.Drawing.Size(35, 37);
             this.btnSegue.TabIndex = 20;
             this.btnSegue.Text = "→";
-            this.btnSegue.UseVisualStyleBackColor = true;
+            this.btnSegue.UseVisualStyleBackColor = false;
             this.btnSegue.Click += new System.EventHandler(this.btnSegue_Click);
             // 
             // btnLimpa
             // 
+            this.btnLimpa.BackColor = System.Drawing.Color.Transparent;
             this.btnLimpa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpa.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnLimpa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -228,11 +235,12 @@
             this.btnLimpa.Size = new System.Drawing.Size(35, 35);
             this.btnLimpa.TabIndex = 21;
             this.btnLimpa.Text = "C";
-            this.btnLimpa.UseVisualStyleBackColor = true;
+            this.btnLimpa.UseVisualStyleBackColor = false;
             this.btnLimpa.Click += new System.EventHandler(this.btnLimpa_Click);
             // 
             // btnInvert
             // 
+            this.btnInvert.BackColor = System.Drawing.Color.Transparent;
             this.btnInvert.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInvert.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnInvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,11 +249,12 @@
             this.btnInvert.Size = new System.Drawing.Size(35, 37);
             this.btnInvert.TabIndex = 22;
             this.btnInvert.Text = "⇵";
-            this.btnInvert.UseVisualStyleBackColor = true;
+            this.btnInvert.UseVisualStyleBackColor = false;
             this.btnInvert.Click += new System.EventHandler(this.btnInvert_Click);
             // 
             // btnNegar
             // 
+            this.btnNegar.BackColor = System.Drawing.Color.Transparent;
             this.btnNegar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNegar.Enabled = false;
             this.btnNegar.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -255,7 +264,7 @@
             this.btnNegar.Size = new System.Drawing.Size(35, 35);
             this.btnNegar.TabIndex = 23;
             this.btnNegar.Text = "±";
-            this.btnNegar.UseVisualStyleBackColor = true;
+            this.btnNegar.UseVisualStyleBackColor = false;
             this.btnNegar.Click += new System.EventHandler(this.btnNegar_Click);
             // 
             // lblNeg
@@ -272,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(55)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(299, 339);
             this.Controls.Add(this.lblNeg);
             this.Controls.Add(this.btnNegar);
@@ -290,6 +299,7 @@
             this.Controls.Add(this.lblOper);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora";

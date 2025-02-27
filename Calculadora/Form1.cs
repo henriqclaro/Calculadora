@@ -27,15 +27,15 @@ namespace Calculadora
             dica.ReshowDelay = 500;
             dica.ShowAlways = true;
 
-            dica.SetToolTip(this.btnSoma, "Adição");
-            dica.SetToolTip(this.btnSub, "Subtração");
-            dica.SetToolTip(this.btnMult, "Multiplicação");
-            dica.SetToolTip(this.btnDiv, "Divisão");
-            dica.SetToolTip(this.btnIgual, "Calcular");
-            dica.SetToolTip(this.btnSegue, "Seguir");
-            dica.SetToolTip(this.btnNegar, "Negar");
-            dica.SetToolTip(this.btnInvert, "Inverter");
-            dica.SetToolTip(this.btnLimpa, "Limpar");
+            dica.SetToolTip(btnSoma, "Adição");
+            dica.SetToolTip(btnSub, "Subtração");
+            dica.SetToolTip(btnMult, "Multiplicação");
+            dica.SetToolTip(btnDiv, "Divisão");
+            dica.SetToolTip(btnIgual, "Calcular");
+            dica.SetToolTip(btnSegue, "Seguir");
+            dica.SetToolTip(btnNegar, "Negar");
+            dica.SetToolTip(btnInvert, "Inverter");
+            dica.SetToolTip(btnLimpa, "Limpar");
         }
 
         void AtribuirOperador(string operador)
@@ -70,6 +70,44 @@ namespace Calculadora
             MostrarResultado();
         }
 
+        private void btnSegue_Click(object sender, EventArgs e)
+        {
+            if (!(long.TryParse(lblResultado.Text, out _)))
+            {
+                lblResultado.Text = "Valor de 'Seguir' estourado";
+                btnIgual.Enabled = false;
+                btnSegue.Enabled = false;
+                btnNegar.Enabled = false;
+            }
+            else
+                numOper1.Value = Decimal.Parse(lblResultado.Text);
+        }
+
+        private void btnLimpa_Click(object sender, EventArgs e)
+        {
+            numOper1.Value = 0;
+            numOper2.Value = 0;
+            lblOper.Text = "...";
+            TravarResultado();
+            lblResultado.Text = "Selecione uma operação";
+        }
+
+        private void btnInvert_Click(object sender, EventArgs e)
+        {
+            numOper1.Value += numOper2.Value;
+            numOper2.Value = numOper1.Value - numOper2.Value;
+            numOper1.Value -= numOper2.Value;
+        }
+
+        private void btnNegar_Click(object sender, EventArgs e)
+        {
+            lblResultado.Text = ((Double.Parse(lblResultado.Text)) * (-1)).ToString();
+            if (lblNeg.Text != "(Negado)")
+                lblNeg.Text = "(Negado)";
+            else
+                lblNeg.Text = "";
+        }
+
         void MostrarResultado()
         {
             if (lblOper.Text != "...")
@@ -92,7 +130,6 @@ namespace Calculadora
                 lblNeg.Text = "";
                 TravarResultado();
             }
-            
         }
 
         void TravarResultado()
@@ -114,36 +151,6 @@ namespace Calculadora
         private void numOper1_ValueChanged(object sender, EventArgs e)
         {
             MostrarResultado();
-        }
-
-        private void btnSegue_Click(object sender, EventArgs e)
-        {
-            numOper1.Value = (decimal)Double.Parse(lblResultado.Text);
-        }
-
-        private void btnLimpa_Click(object sender, EventArgs e)
-        {
-            numOper1.Value = 0;
-            numOper2.Value = 0;
-            lblOper.Text = "...";
-            TravarResultado();
-            lblResultado.Text = "Selecione uma operação";
-        }
-
-        private void btnInvert_Click(object sender, EventArgs e)
-        {
-            numOper1.Value += numOper2.Value;
-            numOper2.Value = numOper1.Value - numOper2.Value;
-            numOper1.Value -= numOper2.Value;
-        }
-
-        private void btnNegar_Click(object sender, EventArgs e)
-        {
-            lblResultado.Text = ((Double.Parse(lblResultado.Text))*(-1)).ToString();
-            if (lblNeg.Text != "(Negado)")
-                lblNeg.Text = "(Negado)";
-            else
-                lblNeg.Text = "";
         }
     }
 }
