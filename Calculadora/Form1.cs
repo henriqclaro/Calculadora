@@ -18,7 +18,9 @@ namespace Calculadora
             InitializeComponent();
             CriarDicas();
         }
-
+        /*
+        // Criação de Dicas (ToolTips)
+        */
         void CriarDicas()
         {
             ToolTip dica = new ToolTip();
@@ -32,12 +34,14 @@ namespace Calculadora
             dica.SetToolTip(btnMult, "Multiplicação");
             dica.SetToolTip(btnDiv, "Divisão");
             dica.SetToolTip(btnIgual, "Calcular");
-            dica.SetToolTip(btnSegue, "Seguir");
+            dica.SetToolTip(btnSegue, "Seguir (Inteiros)");
             dica.SetToolTip(btnNegar, "Negar");
             dica.SetToolTip(btnInvert, "Inverter");
             dica.SetToolTip(btnLimpa, "Limpar");
         }
-
+        /*
+        // Atribuição de Botões
+        */
         void AtribuirOperador(string operador)
         {
             lblOper.Text = operador;
@@ -67,20 +71,26 @@ namespace Calculadora
 
         private void btnIgual_Click(object sender, EventArgs e)
         {
-            MostrarResultado();
+            lblResultado.Text = lblPreview.Text;
+            btnSegue.Enabled = true;
+            btnNegar.Enabled = true;
         }
 
         private void btnSegue_Click(object sender, EventArgs e)
         {
-            if (!(long.TryParse(lblResultado.Text, out _)))
+            if (!(long.TryParse(lblPreview.Text, out _)))
             {
-                lblResultado.Text = "Valor de 'Seguir' estourado";
+                lblResultado.Text = "Valor de 'Seguir' inválido";
                 btnIgual.Enabled = false;
                 btnSegue.Enabled = false;
                 btnNegar.Enabled = false;
             }
             else
+            {
                 numOper1.Value = Decimal.Parse(lblResultado.Text);
+                lblResultado.Text = lblPreview.Text;
+            }
+                
         }
 
         private void btnLimpa_Click(object sender, EventArgs e)
@@ -90,6 +100,7 @@ namespace Calculadora
             lblOper.Text = "...";
             TravarResultado();
             lblResultado.Text = "Selecione uma operação";
+            lblPreview.Text = "";
         }
 
         private void btnInvert_Click(object sender, EventArgs e)
@@ -97,6 +108,7 @@ namespace Calculadora
             numOper1.Value += numOper2.Value;
             numOper2.Value = numOper1.Value - numOper2.Value;
             numOper1.Value -= numOper2.Value;
+            lblResultado.Text = lblPreview.Text;
         }
 
         private void btnNegar_Click(object sender, EventArgs e)
@@ -107,11 +119,14 @@ namespace Calculadora
             else
                 lblNeg.Text = "";
         }
-
+        /*
+        // Funções de Resultado 
+        */
         void MostrarResultado()
         {
             if (lblOper.Text != "...")
             {
+                lblResultado.Text = "";
                 double num1, num2, resultado;
                 num1 = (double)numOper1.Value;
                 num2 = (double)numOper2.Value;
@@ -124,9 +139,8 @@ namespace Calculadora
                     resultado = num1 * num2;
                 else resultado = num1 / num2;
 
-                lblResultado.Text = resultado.ToString();
-                btnSegue.Enabled = true;
-                btnNegar.Enabled = true;
+                lblPreview.Text = resultado.ToString();
+                btnIgual.Enabled = true;
                 lblNeg.Text = "";
                 TravarResultado();
             }
@@ -137,12 +151,15 @@ namespace Calculadora
             if ((lblOper.Text == btnDiv.Text && numOper2.Value == 0) || lblOper.Text == "...")
             {
                 lblResultado.Text = "Operação não realizável";
+                lblPreview.Text = "";
                 btnIgual.Enabled = false;
                 btnSegue.Enabled = false;
                 btnNegar.Enabled = false;
             }
         }
-
+        /*
+        // Veificações
+        */
         private void numOper2_ValueChanged(object sender, EventArgs e)
         {
             MostrarResultado();

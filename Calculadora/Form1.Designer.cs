@@ -44,6 +44,7 @@
             this.btnInvert = new System.Windows.Forms.Button();
             this.btnNegar = new System.Windows.Forms.Button();
             this.lblNeg = new System.Windows.Forms.Label();
+            this.lblPreview = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numOper2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOper1)).BeginInit();
             this.SuspendLayout();
@@ -85,9 +86,9 @@
             // 
             this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultado.ForeColor = System.Drawing.Color.White;
-            this.lblResultado.Location = new System.Drawing.Point(-18, 184);
+            this.lblResultado.Location = new System.Drawing.Point(3, 184);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(305, 26);
+            this.lblResultado.Size = new System.Drawing.Size(284, 26);
             this.lblResultado.TabIndex = 7;
             this.lblResultado.Text = "Selecione uma operação";
             this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -277,12 +278,23 @@
             this.lblNeg.Size = new System.Drawing.Size(0, 20);
             this.lblNeg.TabIndex = 24;
             // 
+            // lblPreview
+            // 
+            this.lblPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblPreview.Location = new System.Drawing.Point(142, 132);
+            this.lblPreview.Name = "lblPreview";
+            this.lblPreview.Size = new System.Drawing.Size(154, 26);
+            this.lblPreview.TabIndex = 25;
+            this.lblPreview.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(299, 339);
+            this.Controls.Add(this.lblPreview);
             this.Controls.Add(this.lblNeg);
             this.Controls.Add(this.btnNegar);
             this.Controls.Add(this.btnInvert);
@@ -328,6 +340,7 @@
         private System.Windows.Forms.Button btnInvert;
         private System.Windows.Forms.Button btnNegar;
         private System.Windows.Forms.Label lblNeg;
+        private System.Windows.Forms.Label lblPreview;
     }
 }
 
