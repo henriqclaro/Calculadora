@@ -292,13 +292,14 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.UpArrow;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.label3.ForeColor = System.Drawing.Color.Silver;
             this.label3.Location = new System.Drawing.Point(260, 323);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 26;
-            this.label3.Text = "v1.3.4";
+            this.label3.Text = "v1.3.5";
             // 
             // Form1
             // 

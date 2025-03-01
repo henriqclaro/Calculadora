@@ -72,8 +72,7 @@ namespace Calculadora
         private void btnIgual_Click(object sender, EventArgs e)
         {
             lblResultado.Text = lblPreview.Text;
-            btnSegue.Enabled = true;
-            btnNegar.Enabled = true;
+            EstadoBtn(true);
         }
 
         private void btnSegue_Click(object sender, EventArgs e)
@@ -82,15 +81,13 @@ namespace Calculadora
             {
                 lblResultado.Text = "Valor de 'Seguir' inválido";
                 btnIgual.Enabled = false;
-                btnSegue.Enabled = false;
-                btnNegar.Enabled = false;
+                EstadoBtn(false);
             }
             else
             {
                 numOper1.Value = Decimal.Parse(lblResultado.Text);
                 lblResultado.Text = lblPreview.Text;
             }
-                
         }
 
         private void btnLimpa_Click(object sender, EventArgs e)
@@ -112,8 +109,7 @@ namespace Calculadora
             if(lblPreview.Text != "")
             {
                 lblResultado.Text = lblPreview.Text;
-                btnSegue.Enabled = true;
-                btnNegar.Enabled = true;
+                EstadoBtn(true);
             }
         }
 
@@ -159,24 +155,28 @@ namespace Calculadora
                 lblResultado.Text = "Operação não realizável";
                 lblPreview.Text = "";
                 btnIgual.Enabled = false;
-                btnSegue.Enabled = false;
-                btnNegar.Enabled = false;
+                EstadoBtn(false);
             }
             if (lblResultado.Text == "")
             {
-                btnNegar.Enabled = false;
-                btnSegue.Enabled = false;
+                EstadoBtn(false);
             }
+        }
+
+        void EstadoBtn(bool valor) //O btnIgual é tratado separadamente, porque só esses dois dão encrenca
+        {
+            btnNegar.Enabled = valor;
+            btnSegue.Enabled = valor;
         }
         /*
         // Verificações
         */
-        private void numOper2_ValueChanged(object sender, EventArgs e)
+        private void numOper1_ValueChanged(object sender, EventArgs e)
         {
             MostrarResultado();
         }
 
-        private void numOper1_ValueChanged(object sender, EventArgs e)
+        private void numOper2_ValueChanged(object sender, EventArgs e)
         {
             MostrarResultado();
         }
