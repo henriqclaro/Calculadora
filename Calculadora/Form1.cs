@@ -162,6 +162,11 @@ namespace Calculadora
                 btnSegue.Enabled = false;
                 btnNegar.Enabled = false;
             }
+            if (lblResultado.Text == "")
+            {
+                btnNegar.Enabled = false;
+                btnSegue.Enabled = false;
+            }
         }
         /*
         // Verificações
