@@ -45,6 +45,7 @@
             this.btnNegar = new System.Windows.Forms.Button();
             this.lblNeg = new System.Windows.Forms.Label();
             this.lblPreview = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numOper2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOper1)).BeginInit();
             this.SuspendLayout();
@@ -288,12 +289,24 @@
             this.lblPreview.TabIndex = 25;
             this.lblPreview.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.Location = new System.Drawing.Point(260, 323);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "v1.3.3";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(299, 339);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblPreview);
             this.Controls.Add(this.lblNeg);
             this.Controls.Add(this.btnNegar);
@@ -341,6 +354,7 @@
         private System.Windows.Forms.Button btnNegar;
         private System.Windows.Forms.Label lblNeg;
         private System.Windows.Forms.Label lblPreview;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -101,6 +101,7 @@ namespace Calculadora
             TravarResultado();
             lblResultado.Text = "Selecione uma operação";
             lblPreview.Text = "";
+            lblNeg.Text = "";
         }
 
         private void btnInvert_Click(object sender, EventArgs e)
@@ -108,7 +109,12 @@ namespace Calculadora
             numOper1.Value += numOper2.Value;
             numOper2.Value = numOper1.Value - numOper2.Value;
             numOper1.Value -= numOper2.Value;
-            lblResultado.Text = lblPreview.Text;
+            if(lblPreview.Text != "")
+            {
+                lblResultado.Text = lblPreview.Text;
+                btnSegue.Enabled = true;
+                btnNegar.Enabled = true;
+            }
         }
 
         private void btnNegar_Click(object sender, EventArgs e)
