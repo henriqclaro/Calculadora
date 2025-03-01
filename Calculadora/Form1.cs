@@ -158,7 +158,7 @@ namespace Calculadora
             }
         }
         /*
-        // Veificações
+        // Verificações
         */
         private void numOper2_ValueChanged(object sender, EventArgs e)
         {
