@@ -299,7 +299,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 26;
-            this.label3.Text = "v1.3.5";
+            this.label3.Text = "v1.3.6";
             // 
             // Form1
             // 

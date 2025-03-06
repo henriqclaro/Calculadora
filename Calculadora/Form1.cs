@@ -87,6 +87,7 @@ namespace Calculadora
             {
                 numOper1.Value = Decimal.Parse(lblResultado.Text);
                 lblResultado.Text = lblPreview.Text;
+                EstadoBtn(true);
             }
         }
 
